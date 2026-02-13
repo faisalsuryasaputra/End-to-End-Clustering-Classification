@@ -30,14 +30,6 @@ This project demonstrates the integration of **Unsupervised Learning** (K-Means,
 - Training **Decision Tree** and **Random Forest** models to predict customer segments.
 - Performing **Hyperparameter Tuning** using `GridSearchCV` to optimize model accuracy.
 
-## 📊 Results & Evaluation
-
-| Model | Accuracy | F1-Score | Notes |
-| :--- | :--- | :--- | :--- |
-| **K-Means** | N/A | N/A | Silhouette Score: *[Insert Score]* |
-| **Decision Tree** | *[Insert]*% | *[Insert]*% | Baseline Model |
-| **Random Forest (Tuned)** | *[Insert]*% | *[Insert]*% | Best Performing Model |
-
 *(You can include screenshots of your Confusion Matrix or PCA Scatter Plot here)*
 
 ## 💻 How to Run
