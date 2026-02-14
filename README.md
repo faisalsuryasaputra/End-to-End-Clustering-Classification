@@ -1,31 +1,44 @@
-# 🚀 End-to-End Customer Segmentation & Prediction Engine
+# 🏦 Customer Segmentation & Prediction Pipeline
 
-![Python](https://img.shields.io/badge/Python-3.10-blue)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)
-![Status](https://img.shields.io/badge/Status-Completed-green)
+![Status](https://img.shields.io/badge/Status-Revision_Completed-green)
 
 ## 📌 Project Overview
-This project delivers a comprehensive **Machine Learning** solution for customer segmentation. Starting from raw data, I performed **Clustering** to group customers based on their behavioral patterns, analyzed the characteristics of each group (*profiling*), and built a **Classification** model to automatically predict segments for new customers.
+Proyek ini mengintegrasikan pendekatan **Unsupervised** dan **Supervised Learning** untuk menganalisis perilaku nasabah perbankan. Alur kerja dimulai dengan mengelompokkan nasabah ke dalam segmen-segmen tertentu menggunakan **K-Means**, yang kemudian hasilnya digunakan sebagai label untuk melatih model klasifikasi **Random Forest**.
 
-This project demonstrates the integration of **Unsupervised Learning** (K-Means, PCA) with **Supervised Learning** (Random Forest, Decision Tree) to solve real-world business problems.
+## 📂 Struktur Repository
+Sesuai dengan ketentuan submission, repository ini berisi:
+- `[Clustering]_Submission_Akhir_BMLP_Faisal_Surya_Saputra.ipynb`: Tahap EDA, Preprocessing, dan Clustering.
+- `[Klasifikasi]_Submission_Akhir_BMLP_Faisal_Surya_Saputra.ipynb`: Tahap Splitting, Modeling, dan Tuning Klasifikasi.
+- `model_clustering.h5`: Model K-Means yang telah dilatih.
+- `PCA_model_clustering.h5`: Model clustering berbasis PCA (Advanced).
+- `decision_tree_model.h5`: Model klasifikasi baseline.
+- `tuning_classification.h5`: Model Random Forest yang telah di-tuning (Best Model).
+- `data_clustering.csv`: Dataset hasil clustering dengan kolom label `Target`.
+- `data_clustering_inverse.csv`: Dataset hasil clustering dalam format nilai asli (Inverse).
 
-## 🛠️ Workflow (Pipeline)
+## 🛠️ Metodologi & Analisis (Kriteria 4)
 
-### 1. Data Preprocessing & Cleaning
-- Handling missing values and duplicates.
-- Numerical data standardization (*Scaling*).
-- Categorical data encoding (*One-Hot Encoding*).
+### Clustering & Profiling Nasabah
+Berdasarkan hasil analisis agregasi (mean, min, max) pada data yang telah di-inverse, nasabah dikelompokkan menjadi 3 segmen utama:
 
-### 2. Clustering (Unsupervised Learning)
-- Implementing **K-Means Clustering**.
-- Determining the optimal number of clusters ($k$) using the **Elbow Method** and **Silhouette Score** evaluation.
-- Dimensionality reduction using **PCA (Principal Component Analysis)** for 2D visualization.
+1.  **Cluster 0 (Young Students - Charlotte):** Nasabah muda (rata-rata 44.8 tahun) dengan profesi pelajar. Memiliki saldo rata-rata terendah namun aktif menggunakan layanan cabang.
+2.  **Cluster 1 (Active Students - Tucson):** Kelompok pelajar yang sangat aktif secara transaksional dengan rata-rata nominal transaksi tertinggi (258.21).
+3.  **Cluster 2 (Affluent Engineers - Fort Worth):** Segmen dewasa mapan dengan profesi Engineer. Memiliki saldo akun tertinggi (5170.92), mencerminkan profil nasabah *affluent*.
 
-### 3. Cluster Profiling & Interpretation
-- Performing *inverse transformation* to return data to its original readable scale.
-- Analyzing the characteristics of each cluster (e.g., identifying "High Spenders", "Loyal Customers", etc.) based on statistical means and modes.
 
-### 4. Classification (Supervised Learning)
-- Using the generated clusters as "Labels" (Targets).
-- Training **Decision Tree** and **Random Forest** models to predict customer segments.
-- Performing **Hyperparameter Tuning** using `GridSearchCV` to optimize model accuracy.
+
+### Klasifikasi & Optimasi
+Label yang dihasilkan dari clustering (`Target`) digunakan untuk melatih model klasifikasi. Model **Random Forest** yang telah di-optimasi menggunakan `GridSearchCV` berhasil mencapai akurasi **99%**, memberikan hasil prediksi yang sangat stabil untuk segmentasi nasabah baru.
+
+## 💻 Cara Menjalankan
+1. Clone repository ini.
+2. Pastikan library `pandas`, `scikit-learn`, `seaborn`, dan `joblib` sudah terinstall.
+3. Jalankan notebook Clustering terlebih dahulu untuk menghasilkan file dataset berlabel.
+4. Jalankan notebook Klasifikasi untuk melatih dan mengevaluasi model prediksi.
+
+## 👤 Author
+**Faisal Surya Saputra**
+*Informatics Student at Telkom University*
+[LinkedIn](https://www.linkedin.com/in/faisalsuryasaputra/) | [GitHub](https://github.com/faisalsuryasaputra)
