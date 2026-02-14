@@ -12,13 +12,13 @@ Sesuai dengan ketentuan submission, repository ini berisi:
 - `[Clustering]_Submission_Akhir_BMLP_Faisal_Surya_Saputra.ipynb`: Tahap EDA, Preprocessing, dan Clustering.
 - `[Klasifikasi]_Submission_Akhir_BMLP_Faisal_Surya_Saputra.ipynb`: Tahap Splitting, Modeling, dan Tuning Klasifikasi.
 - `model_clustering.h5`: Model K-Means yang telah dilatih.
-- `PCA_model_clustering.h5`: Model clustering berbasis PCA (Advanced).
+- `PCA_model_clustering.h5`: Model clustering berbasis PCA.
 - `decision_tree_model.h5`: Model klasifikasi baseline.
 - `tuning_classification.h5`: Model Random Forest yang telah di-tuning (Best Model).
 - `data_clustering.csv`: Dataset hasil clustering dengan kolom label `Target`.
 - `data_clustering_inverse.csv`: Dataset hasil clustering dalam format nilai asli (Inverse).
 
-## 🛠️ Metodologi & Analisis (Kriteria 4)
+## 🛠️ Metodologi & Analisis
 
 ### Clustering & Profiling Nasabah
 Berdasarkan hasil analisis agregasi (mean, min, max) pada data yang telah di-inverse, nasabah dikelompokkan menjadi 3 segmen utama:
